@@ -1,0 +1,61 @@
+<html><head><script type = "text/javascript">
+function validate() 
+{
+var un = document.myform.username.value;
+var pw = document.myform.pword.value;
+var valid = false;
+var unArray = ["hari", "priya", "boofy", "zushu","meow"];  
+var pwArray = ["hari", "priya", "boofy", "zushu","meow"];
+for (var i=0; i <unArray.length; i++) 
+{
+if ((un == unArray[i]) && (pw == pwArray[i])) 
+{
+valid = true;
+break;
+}
+}
+if (valid) 
+{
+alert ("Login was successful");
+return false;
+}
+else
+ {
+alert ("invalid");
+return false;
+}
+}
+</script>
+</head>
+<body style="margin: 0px; padding: 0px; font-family: 'Trebuchet MS',verdana;">
+<table width="100%" style="height: 100%;" cellpadding="10" cellspacing="0" border="0">
+<tr>
+<td colspan="3" style="height: 100px;" background="hy.jpg" >
+<center ><font color="Lime">
+<IMG  BORDER="1" ALIGN="Left" SRC="shock.jpg" width="100" height="100"></font><font color="white">
+</font><font face="Helvetica" color="Red"><h1 ><bold><emp>SHOCK WEB SERVICES</emp></bold></h1></center></font>
+<marquee behavior="alternate" ><font face="Comic sans MS" color="white"> 
+<emp>!!!!!!!!!!!!EASY ELECTRIC BILL PAYMENT &  QUICKEST WAY!!!!!!!!!</emp></font></marquee></td></tr>
+<tr><td  colspan="3" valign="middle" height="30" background="hy.jpg" >
+<a href="priya.html">Home</a></td>
+</tr>
+
+<td width="55%"  background="hy.jpg"" align="center" > <form name = "myform"><center>
+<font face="Bedrock" color="white">
+<label >USER NAME :</label>
+<input type="text" name="username" ><br><br>
+<label >PASSWORD  :</label> &nbsp 
+<input type="password" name="pword"><br> &nbsp &nbsp &nbsp <br>
+<input type="button" value="Log In" name="Submit" onclick= "validate()"><br> <br>
+<a href="register.html">CREATE ACCOUNT</a></center>
+</font></form>
+</td>
+
+<tr><td colspan="3" align="center" height="80"  background="hy.jpg"><font face="Bedrock" color="white">
+contact details:9487085620   &nbsp &nbsp &nbsp Address:Madurai</td>
+</tr>
+</table>
+
+</body>
+
+</html>

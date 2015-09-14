@@ -1,0 +1,131 @@
+<html><head>
+<script>
+function formValidation()  
+{  
+var uid = document.registration.userid;  
+var uname = document.registration.username;  
+var udistrict = document.registration.district;  
+var user = document.registration.service;  
+if(userid_validation(uid,6,8))  
+{  
+if(allLetter(uname))  
+{  
+if(countryselect(udistrict))  
+{  
+if(allnumeric(user))  
+{
+}  
+}  
+}  
+}  
+return false;
+}
+
+
+function userid_validation(uid,max,min)  
+{  
+var uid_len = uid.value.length;  
+if (uid_len == 0 || uid_len >= min || uid_len < max)  
+{  
+alert("User Id should be within "+max+" to "+min);  
+userid.focus();  
+return false;  
+}  
+return true;  
+}  
+
+
+function allLetter(uname)  
+{   
+var letters = /^[A-Za-z]+$/;  
+if(uname.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('Username must have alphabet characters only');  
+username.focus();  
+return false;  
+}  
+}    
+
+function countryselect(udistrict)  
+{  
+if(udistrict.value == "Default")  
+{  
+alert('Select your district');  
+udistrict.focus();  
+return false;  
+}  
+else  
+{  
+return true;  
+}  
+}  
+
+function allnumeric(user)  
+{   
+var numbers = /^[0-9]+$/;  
+if(uzip.value.match(numbers))  
+{  
+return true;  
+}  
+else  
+{  
+alert('Service code must be number');  
+service.focus();  
+return false;  
+}  
+}  
+function myFunction() {
+    alert("BILL IS IN PROCESS!!!!!");
+}
+
+</script>  
+</head>
+<body style="margin: 0px; padding: 0px; font-family: 'Trebuchet MS',verdana;">
+<table width="100%" style="height: 100%;" cellpadding="10" cellspacing="0" border="0">
+<tr>
+<td colspan="3" style="height: 100px;" background="hy.jpg" >
+<center ><font color="Lime">
+<IMG  BORDER="1" ALIGN="Left" SRC="shock.jpg" width="100" height="100"></font><font color="white">
+</font><font face="Helvetica" color="Red"><h1 ><bold><emp>SHOCK WEB SERVICES</emp></bold></h1></center></font>
+<marquee behavior="alternate" ><font face="Comic sans MS" color="white"> 
+<emp>!!!!!!!!!!!!EASY ELECTRIC BILL PAYMENT &  QUICKEST WAY!!!!!!!!!</emp></font></marquee></td></tr>
+<tr><td  colspan="3" valign="middle" height="30" background="hy.jpg" >
+<a href="priya.html">Home</a></td>
+</tr>
+
+<td background="yh1.jpg" align="center"><font face="Bedrock" color="white">
+ <h1>STATUS ENQUIRY</h1>  
+<form name='registration' onSubmit="return formValidation();"  method=get/post   ><br> 
+<label for="userid">User id:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="userid" /><br>
+<label for="username">Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="username" /><br> 
+<label for="country">District:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="country">  
+<option selected="" value="Default">(select a DISTRICT)</option>  
+<option value="AF">MADURAI</option>  
+<option value="AL">DINDUGAL</option>  
+<option value="DZ">VIRUTHUNAGAR</option>  
+<option value="AS">MELLUR</option>  
+<option value="AD">ERODE</option>  
+</select>  <br>
+<label >Service Code:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<input type="text" name="service" />&nbsp;<button onclick="myFunction()">STATUS</button> <br> 
+<center>
+<button type="submit"  value="Submit" onSubmit="return formValidation();">Submit</button></center>
+</form>  
+</td>
+</tr>
+
+<tr><td colspan="3" align="center" height="80"  background="yh.jpg"><font face="Bedrock" color="white">
+contact details:9487085620   &nbsp &nbsp &nbsp Address:Madurai</td>
+</tr>
+</table>
+
+</body>
+
+</html>

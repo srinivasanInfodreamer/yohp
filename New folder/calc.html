@@ -1,0 +1,199 @@
+<HTML><head>
+  <style>{
+	width 62px
+	height: 25px;
+	border: none;
+	background-color:"black";
+	}
+
+	</style>
+<script type="text/javascript">
+function calculate() {
+		var myBox1 = document.getElementById('box1').value;	
+		var myBox2 = document.getElementById('box2').value;
+		var result = document.getElementById('result');	
+		var myResult = myBox1 * myBox2;
+		result.value = myResult;
+      
+		
+	}
+
+function validate(evt) 
+{   
+var theEvent = evt || window.event;   
+var key = theEvent.keyCode || theEvent.which;   
+key = String.fromCharCode( key );   
+var regex = /[0-9]|\./;  
+ if( !regex.test(key) )
+ {     theEvent.returnValue = false;    
+ if(theEvent.preventDefault) theEvent.preventDefault();   
+} } 
+
+ function CheckNumber(txt)
+        {
+            var regNumber = new RegExp('^[0-9]+$');
+			//alert (txt.value);
+            if (txt.value.match(regNumber) === null)
+            {
+                txt.value = txt.value.substr(0,(txt.value.length-1) );
+            }
+        }
+
+function validateForm()
+{
+
+for (i=0; i<document.insert.Category.length; i++){
+if (document.insert.Category[i].checked==true)
+var x=document.insert.Category[i].value;
+}
+var x1=document.forms["insert"]["units"].value;
+var x2=document.forms["insert"]["con_load"].value;
+if (x1==null || x1=="" || x1<"0")
+  {
+  alert("Please Enter Units consumed");
+  return false;
+  }
+if (x!="LA1A" && (x2==null || x2==""))
+  {
+  alert("Please Enter Connected Load");
+  return false;
+  }
+  if (x!="LA1A" && (x2>112))
+  {
+  alert( "Connected Load Cannot Be Greater Than 112 KW");
+  return false;
+  }
+  
+}
+</script>
+
+</head>
+<body style="margin: 0px; padding: 0px; font-family: 'Trebuchet MS',verdana;">
+<table width="100%" style="height: 100%;" cellpadding="10" cellspacing="0" border="0">
+<tr>
+<td colspan="3" style="height: 100px;" background="hy.jpg" >
+<center ><font color="Lime">
+<IMG  BORDER="1" ALIGN="Left" SRC="shock.jpg" width="100" height="100"></font><font color="white">
+</font><font face="Helvetica" color="Red"><h1 ><bold><emp>SHOCK WEB SERVICES</emp></bold></h1></center></font>
+<marquee behavior="alternate" ><font face="Comic sans MS" color="white"> 
+<emp>!!!!!!!!!!!!EASY ELECTRIC BILL PAYMENT &  QUICKEST WAY!!!!!!!!!</emp></font></marquee></td></tr>
+<tr><td  colspan="3" valign="middle" height="30" background="hy.jpg" >
+<a href="priya.html">Home</a></td>
+</tr>
+<tr>
+<td background="yh.jpg" >
+<center>
+<form name="insert" method="post" action="new.html" onSubmit="return validateForm()" >
+  <table width="80%" border="0" cellpadding="4" cellspacing="3" align="center" style="page-break-before: always;"><b>
+    <tbody> <tr>
+        <td colspan="4" valign="top"><p align="center"><font
+ face="Verdana, sans-serif" color="white"><font size="4"><b><span>BILL CALCULATION</span></b></font></font></p></td>
+</tr>
+      <tr >
+        <td width="34%" align="right"><b><font color="white"><font face="Verdana, sans-serif"><span>Select Your
+          Category:</span></font></font></b></td>
+        <td><font color="white"><font face="Verdana, sans-serif">
+          <input  type="radio" name="Category"  checked="checked" value="LA1A" onClick="document.getElementById('otherTextBox3').style.visibility='hidden';document.getElementById('otherTextBox03').style.visibility='hidden'">
+		            <span  style="background: transparent none repeat scroll 0% 50%;" > Domestic</span></font></font> </td>
+        <td ><font color="white"><font face="Verdana, sans-serif">
+          <input type="radio" name="Category"   value="LM51" onClick="document.getElementById('otherTextBox3').style.visibility='visible';document.getElementById('otherTextBox03').style.visibility='visible'">
+          <span> Commercial </span></font></font><br>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td ><p><font color="white"><font face="Verdana, sans-serif">
+            <input
+ type="radio" name="Category" value="LA3A1"  onClick="document.getElementById('otherTextBox3').style.visibility='visible';document.getElementById('otherTextBox03').style.visibility='visible'">
+            <span> Cottage Industries</span></font></font><br>
+          </td>
+        <td ><p><font color="white"><font face="Verdana, sans-serif">
+            <input
+ type="radio" name="Category"  value="LN3B"   onClick="document.getElementById('otherTextBox3').style.visibility='visible';document.getElementById('otherTextBox03').style.visibility='visible'">
+            <span> Other Industries</span></font></font><br>
+          </td>
+      </tr>
+      <tr valign="top">
+          <td width="34%" align="right"><p><b><font color="white"><font face="Verdana, sans-serif"><span
+ style="background: transparent none repeat scroll 50% 0%;">No of Units (kwh)
+          Used :</span></font></font></b><br>
+        </td>
+        <td width="26%" align="left"><input type="text" name="units" maxlength="8" onKeyUp="CheckNumber(this);" onKeyDown="CheckNumber(this);" value= >
+            <br>
+        </td>
+        <td width="40%" align="left">
+
+<input type="submit" name="Calculate" value="Calculate" >
+            <input type="hidden" name="rsno" value="">
+            <input type='hidden' name='back' value='n'>
+        </td>
+      </tr>
+
+      <tr valign="top">
+        <td width="34%" align="right"><b><font color="white"><font face="Verdana, sans-serif"><span
+style="background: transparent none repeat scroll 50% 0%;">
+          <div id="otherTextBox3"   style="visibility:hidden;" >Connected Load(KW) :</div>
+        </span></font></font></b> </td>
+        <td width="26%" align="left">
+		  <div id="otherTextBox03"  style="visibility:hidden;" >
+            <input type="text" name="con_load" value=""  onkeyup="CheckNumber(this);" onKeyDown="CheckNumber(this);" onBlur="return toggleRows(this.form.con_load.value)">
+        </div></td>
+        </tr>
+
+       <tr>
+        <td valign="top" rowspan="1" colspan="4"><hr width="100%" size="2"></td>
+      </tr>
+
+<td><b>Select country:</b></td>
+<td><select name="Select1" onchange="OnCountryChange()" autofocus>
+<option>Australia</option>
+<option>Canada</option>
+<option>France</option>
+<option>Germany</option>
+<option>India</option>
+</select></td>
+<td>&nbsp;</td></tr>	
+</font><br>			
+<tr>
+<td><b>Power consumption:</b></td>
+<td class="math"><input name="n1" type="text" class="intext" style="width:120px"></td>
+<td><select name="Select2">
+<option selected="selected">watts (W)</option>
+<option>kilowatts (kW)</option>
+</select></td>
+</tr><br>
+<tr>
+<td><b>Hours of use per day:</b></td>
+<td class="math"><input name="text" type="text" class="intext" style="width:120px"></td>
+<td class="mathsymbol">h/day</td>
+</tr><br>
+<tr>
+<td><b>1 kilowatt-hour (kWh) cost:</b></td>
+<td class="math"><input name="n2" type="text" class="intext" value="12" style="width:120px"></td>
+<td><select name="Select3">
+<option selected="selected">cent</option>
+<option>pence</option>
+<option>rupee</option>
+<option>peso</option>
+<option> </option>
+</select></td><br>
+</tr>
+
+  <tr>
+    <td><b>1 UNIT IS:</b></td>
+<td><input id="box1" type="text"  value="8" oninput="calculate()" /><BR></td></TR>
+   <TR> <td><b>USED UNITS:</b></td>
+<td><input id="box2" type="text" oninput="calculate()" /></td><BR></TR>
+   <TR> <td><b>THE COST IS:</b></td>
+<td><input id="result" /></td><BR>
+  </tr>
+    </tbody>
+  </table>
+</form><tr>
+
+<tr><td colspan="3" align="center" height="80"  background="hy.jpg"><font face="Bedrock" color="white">
+contact details:9487085620   &nbsp &nbsp &nbsp Address:Madurai</td>
+</tr><b>
+</table>
+</body>
+</html>
